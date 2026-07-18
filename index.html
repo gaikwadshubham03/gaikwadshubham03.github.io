@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shubham Gaikwad - Software Development Engineer 2 at Philips. Full-Stack Developer specializing in React, TypeScript, and Healthcare Technology.">
+    <meta name="author" content="Shubham Gaikwad">
+
+    <!-- Open Graph / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gaikwadshubham03.github.io/">
+    <meta property="og:title" content="Shubham Gaikwad | Software Development Engineer">
+    <meta property="og:description" content="SDE2 at Philips | Full-Stack Developer | Healthcare Tech Innovator">
+    <meta property="og:image" content="https://gaikwadshubham03.github.io/assets/og-preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shubham Gaikwad | Software Development Engineer">
+    <meta name="twitter:description" content="SDE2 at Philips | Full-Stack Developer | Healthcare Tech Innovator">
+
+    <title>Shubham Gaikwad | Software Development Engineer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">&lt;SG /&gt;</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-content">
+            <span class="hero-greeting mono">Hello, I'm</span>
+            <h1 class="hero-name">Shubham Gaikwad</h1>
+            <div class="hero-title-wrapper">
+                <span class="hero-title" id="typed-text"></span>
+                <span class="cursor">|</span>
+            </div>
+            <p class="hero-tagline">I turn web dreams into pixel-perfect reality</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-content reveal">
+                <div class="about-text">
+                    <p>I'm a Software Development Engineer at <span class="highlight">Philips</span>, where I build modern healthcare applications that make a real difference in clinical workflows. With a Master's in Computer Engineering from San Jose State University and experience spanning full-stack development, I specialize in creating intuitive, high-performance web applications.</p>
+                    <p>From modernizing event notification systems to mentoring engineers and driving design workshops, I combine deep technical expertise with strong leadership to deliver impactful solutions in the healthcare technology space.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">3.92</span>
+                        <span class="stat-label">GPA (MS)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number"><i class="fas fa-heartbeat"></i></span>
+                        <span class="stat-label">Healthcare Tech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title reveal">Experience</h2>
+            <div class="timeline">
+                <!-- Philips - Current -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Software Development Engineer 2</h3>
+                            <span class="timeline-date">Jan 2024 &ndash; Present</span>
+                        </div>
+                        <h4 class="timeline-company"><i class="fas fa-building"></i> Philips &bull; Cambridge, MA</h4>
+                        <ul class="timeline-details">
+                            <li>Modernizing the Event Notification UI for Philips PICiX platform using React and C# .NET</li>
+                            <li>Led design discussions with clinical specialists to drive product alignment with clinical workflows</li>
+                            <li>Spearheaded a workshop to upgrade the application from DLS to Filament design, completing in 2 hours instead of planned 2+ days; recognized by Head of Design at Philips</li>
+                            <li>Mentoring two Co-op engineers, providing technical guidance and code reviews</li>
+                            <li>Integrated SonarQube in CI/CD workflow to enhance security and code quality</li>
+                            <li>Engineered backend services using Node.js and TypeScript for authentication</li>
+                            <li>Started as Co-op in Jan 2024, secured full-time in June 2024, promoted to SDE2 in July 2025</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Petrabytes -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Java Web Developer - Cloud Technologies Intern</h3>
+                            <span class="timeline-date">Jul 2023 &ndash; Aug 2023</span>
+                        </div>
+                        <h4 class="timeline-company"><i class="fas fa-building"></i> Petrabytes &bull; Houston, TX (Remote)</h4>
+                        <ul class="timeline-details">
+                            <li>Analyzed and smoothed a large oil well dataset of over 100k records using Databricks on GCP and Azure, achieving 40% reduction in data noise</li>
+                            <li>Created a Vaadin web application using Spring Boot to visualize geospatial data with heatmaps and histograms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Philips India -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Software Engineer II</h3>
+                            <span class="timeline-date">Aug 2020 &ndash; Jul 2022</span>
+                        </div>
+                        <h4 class="timeline-company"><i class="fas fa-building"></i> Philips &bull; Bangalore, India</h4>
+                        <ul class="timeline-details">
+                            <li>Delivered contour feature for Philips Visual Patient Avatar, helping clinicians comprehend vital signs 57% better and reducing perceived workload by 12%</li>
+                            <li>Developed 10+ reusable web components using TypeScript, Lit with Karma/Jasmine testing</li>
+                            <li>Automated web component scaffold creation via bash scripts, saving 2 hours per developer</li>
+                            <li>Led an 8-member Hackathon team to create an Angular web portal for HPM team knowledge sharing</li>
+                            <li>Won "Team up to Win" Award twice for excellent collaborative work</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Education</h2>
+            <div class="education-grid">
+                <div class="education-card reveal">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>San Jose State University</h3>
+                    <p class="education-degree">Masters of Science in Computer Engineering</p>
+                    <p class="education-meta"><i class="fas fa-calendar"></i> Aug 2022 &ndash; May 2024</p>
+                    <p class="education-meta"><i class="fas fa-map-marker-alt"></i> San Jose, CA</p>
+                    <p class="education-gpa"><span class="highlight">GPA: 3.92</span></p>
+                    <p class="education-courses">Data Structures & Algorithms, Software Security, Machine Learning, Data Mining</p>
+                </div>
+                <div class="education-card reveal">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Visvesvaraya National Institute of Technology</h3>
+                    <p class="education-degree">Bachelor of Technology, Electronics & Communication Engineering</p>
+                    <p class="education-meta"><i class="fas fa-calendar"></i> Jul 2016 &ndash; May 2020</p>
+                    <p class="education-meta"><i class="fas fa-map-marker-alt"></i> Nagpur, India</p>
+                    <p class="education-courses">Operating Systems, Computer Networking, Computer Architecture, Math & Statistics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title reveal">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <i class="fas fa-folder-open project-icon"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/ShubhamGaikwad" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Kickstarter Project Success Prediction</h3>
+                    <p class="project-description">Leveraged 20,632 Kickstarter campaigns with 40+ features. Employed SMOTE, SVD, and Stratified K-Fold cross validation to address class imbalance. Achieved 100% accuracy using Random Forest classifier.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>Random Forest</span>
+                        <span>SMOTE</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <i class="fas fa-folder-open project-icon"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/ShubhamGaikwad" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">California Tweet Trends by Region</h3>
+                    <p class="project-description">Designed a MERN web application analyzing 50,000 tweets to provide insights into California citizens' priorities, presented on an interactive map with intuitive landing and maps layout.</p>
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                        <span>Express</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <i class="fas fa-folder-open project-icon"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/ShubhamGaikwad" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Motion Planning for Self-Driving Car</h3>
+                    <p class="project-description">Created a fully functional motion planner for autonomous vehicles handling real-world scenarios. Implemented conformal lattice planner in Python with simulation on CARLA simulator.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>CARLA</span>
+                        <span>Autonomous Driving</span>
+                        <span>Path Planning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Vaadin</span>
+                        <span class="skill-tag">Jest</span>
+                        <span class="skill-tag">Karma</span>
+                        <span class="skill-tag">Jasmine</span>
+                        <span class="skill-tag">Webpack</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Node.js</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-cloud"></i> DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-chart-bar"></i> Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apache Spark</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Databricks</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">Alteryx</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title reveal">Certifications & Professional Development</h2>
+            <div class="certifications-grid">
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-content">
+                        <h3>GitHub Actions & GitOps</h3>
+                        <p class="cert-issuer">O'Reilly</p>
+                        <p class="cert-date"><i class="fas fa-calendar"></i> April 2024</p>
+                    </div>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-content">
+                        <h3>Testing React.js Apps</h3>
+                        <p class="cert-issuer">O'Reilly</p>
+                        <p class="cert-date"><i class="fas fa-calendar"></i> January 2024</p>
+                    </div>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <div class="cert-content">
+                        <h3>INTERSECT Bootcamp '23</h3>
+                        <p class="cert-issuer">US-RSE at Princeton University</p>
+                        <p class="cert-date">Software Design, CI/CD, Packaging, Collaborative Git, Testing, Documentation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Let's Connect</h2>
+            <p class="contact-subtitle reveal">I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.</p>
+            <div class="contact-grid reveal">
+                <a href="mailto:shubhamsubhashgaikwad@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>shubhamsubhashgaikwad@gmail.com</span>
+                </a>
+                <a href="tel:+14086905787" class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <span>408-690-5787</span>
+                </a>
+                <a href="https://www.linkedin.com/in/shubham-gaikwad-b8852015b/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/ShubhamGaikwad" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Shubham Gaikwad. Built with passion and pure code.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
