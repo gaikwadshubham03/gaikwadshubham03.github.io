@@ -1,11 +1,5 @@
-// ========== Preloader ==========
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    setTimeout(() => {
-        preloader.classList.add('hidden');
-        document.body.classList.add('loaded');
-    }, 1800);
-});
+// ========== Page Load ==========
+document.body.classList.add('loaded');
 
 // ========== Theme Toggle ==========
 const themeToggle = document.getElementById('theme-toggle');
@@ -166,7 +160,7 @@ function typeEffect() {
     setTimeout(typeEffect, typingSpeed);
 }
 
-setTimeout(typeEffect, 2000);
+setTimeout(typeEffect, 500);
 
 // ========== Back to Top Button ==========
 const backToTop = document.getElementById('back-to-top');
