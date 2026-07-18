@@ -294,13 +294,14 @@ function animate() {
     animationId = requestAnimationFrame(animate);
 }
 
-canvas.addEventListener('mousemove', (e) => {
+const heroEl = document.getElementById('hero');
+heroEl.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
     mouseX = e.clientX - rect.left;
     mouseY = e.clientY - rect.top;
 }, { passive: true });
 
-canvas.addEventListener('mouseleave', () => {
+heroEl.addEventListener('mouseleave', () => {
     mouseX = -1000;
     mouseY = -1000;
 }, { passive: true });
