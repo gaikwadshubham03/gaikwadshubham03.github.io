@@ -1,3 +1,24 @@
+// ========== Preloader ==========
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+        preloader.classList.add('hidden');
+        document.body.classList.add('loaded');
+    }, 1800);
+});
+
+// ========== Theme Toggle ==========
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', savedTheme);
+
+themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+});
+
 // ========== Mobile Navigation ==========
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
@@ -14,6 +35,27 @@ navLinks.forEach(link => {
         navMenu.classList.remove('active');
     });
 });
+
+// ========== Navbar Scroll Effect ==========
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+}, { passive: true });
+
+// ========== Scroll Progress Bar ==========
+const scrollProgress = document.getElementById('scroll-progress');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    scrollProgress.style.width = progress + '%';
+}, { passive: true });
 
 // ========== Active Navigation Highlighting ==========
 const sections = document.querySelectorAll('section[id]');
@@ -41,17 +83,50 @@ sections.forEach(section => {
 const revealElements = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('active');
-            }, index * 100);
+            entry.target.classList.add('active');
             revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.15 });
+}, { threshold: 0.12 });
 
 revealElements.forEach(el => revealObserver.observe(el));
+
+// ========== Counter Animation ==========
+const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseFloat(el.dataset.target);
+            const isDecimal = el.dataset.decimal === 'true';
+            const duration = 1500;
+            const startTime = performance.now();
+
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = target * eased;
+
+                el.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    el.textContent = isDecimal ? target.toFixed(2) : target;
+                }
+            }
+
+            requestAnimationFrame(updateCounter);
+            counterObserver.unobserve(el);
+        }
+    });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(el => counterObserver.observe(el));
 
 // ========== Typing Animation ==========
 const typedText = document.getElementById('typed-text');
@@ -91,7 +166,7 @@ function typeEffect() {
     setTimeout(typeEffect, typingSpeed);
 }
 
-typeEffect();
+setTimeout(typeEffect, 2000);
 
 // ========== Back to Top Button ==========
 const backToTop = document.getElementById('back-to-top');
@@ -106,6 +181,31 @@ window.addEventListener('scroll', () => {
 
 backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ========== Project Card Tilt Effect ==========
+const tiltCards = document.querySelectorAll('[data-tilt]');
+
+tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -5;
+        const rotateY = ((x - centerX) / centerX) * 5;
+
+        card.style.setProperty('--rotate-x', rotateX + 'deg');
+        card.style.setProperty('--rotate-y', rotateY + 'deg');
+        card.style.setProperty('--mouse-x', (x / rect.width * 100) + '%');
+        card.style.setProperty('--mouse-y', (y / rect.height * 100) + '%');
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--rotate-x', '0deg');
+        card.style.setProperty('--rotate-y', '0deg');
+    });
 });
 
 // ========== Particle Background ==========
@@ -133,10 +233,10 @@ class Particle {
     reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.radius = Math.random() * 2 + 1;
-        this.opacity = Math.random() * 0.5 + 0.2;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.radius = Math.random() * 2 + 0.5;
+        this.opacity = Math.random() * 0.5 + 0.1;
     }
 
     update() {
@@ -149,10 +249,10 @@ class Particle {
         const dx = this.x - mouseX;
         const dy = this.y - mouseY;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-            const force = (120 - dist) / 120;
-            this.x += dx * force * 0.02;
-            this.y += dy * force * 0.02;
+        if (dist < 150) {
+            const force = (150 - dist) / 150;
+            this.x += dx * force * 0.015;
+            this.y += dy * force * 0.015;
         }
     }
 
@@ -165,7 +265,7 @@ class Particle {
 }
 
 function initParticles() {
-    const count = window.innerWidth < 768 ? 30 : 60;
+    const count = window.innerWidth < 768 ? 35 : 70;
     particles = [];
     for (let i = 0; i < count; i++) {
         particles.push(new Particle());
@@ -179,8 +279,8 @@ function drawConnections() {
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
 
-            if (dist < 150) {
-                const opacity = (1 - dist / 150) * 0.15;
+            if (dist < 140) {
+                const opacity = (1 - dist / 140) * 0.12;
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
@@ -194,12 +294,10 @@ function drawConnections() {
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     particles.forEach(p => {
         p.update();
         p.draw();
     });
-
     drawConnections();
     animationId = requestAnimationFrame(animate);
 }
@@ -218,7 +316,6 @@ canvas.addEventListener('mouseleave', () => {
 initParticles();
 animate();
 
-// Pause animation when tab is not visible
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
         cancelAnimationFrame(animationId);
@@ -227,7 +324,6 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-// Pause animation when hero is not visible
 const heroSection = document.getElementById('hero');
 const heroObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

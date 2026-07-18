@@ -32,6 +32,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <span class="preloader-logo">&lt;SG /&gt;</span>
+            <div class="preloader-bar"><div class="preloader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -45,11 +56,17 @@
                 <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -57,20 +74,27 @@
     <section id="hero" class="hero">
         <canvas id="particles-canvas"></canvas>
         <div class="hero-content">
-            <span class="hero-greeting mono">Hello, I'm</span>
-            <h1 class="hero-name">Shubham Gaikwad</h1>
-            <div class="hero-title-wrapper">
+            <span class="hero-greeting mono fade-in-up" style="--delay: 0.2s">Hello, I'm</span>
+            <h1 class="hero-name fade-in-up" style="--delay: 0.4s">Shubham Gaikwad</h1>
+            <div class="hero-title-wrapper fade-in-up" style="--delay: 0.6s">
                 <span class="hero-title" id="typed-text"></span>
                 <span class="cursor">|</span>
             </div>
-            <p class="hero-tagline">I turn web dreams into pixel-perfect reality</p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            <p class="hero-tagline fade-in-up" style="--delay: 0.8s">I turn web dreams into pixel-perfect reality</p>
+            <div class="hero-cta fade-in-up" style="--delay: 1s">
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
+                <a href="#" class="btn btn-outline" id="resume-btn"><i class="fas fa-download"></i> Resume</a>
+                <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+            </div>
+            <div class="hero-social fade-in-up" style="--delay: 1.2s">
+                <a href="https://github.com/gaikwadshubham03" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shubham-gaikwad-b8852015b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:shubhamsubhashgaikwad@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
         <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
@@ -78,23 +102,35 @@
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title reveal">About Me</h2>
-            <div class="about-content reveal">
-                <div class="about-text">
+            <div class="about-content">
+                <div class="about-image reveal">
+                    <div class="about-image-wrapper">
+                        <div class="about-image-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="about-image-border"></div>
+                    </div>
+                </div>
+                <div class="about-text reveal">
                     <p>I'm a Software Development Engineer at <span class="highlight">Philips</span>, where I build modern healthcare applications that make a real difference in clinical workflows. With a Master's in Computer Engineering from San Jose State University and experience spanning full-stack development, I specialize in creating intuitive, high-performance web applications.</p>
                     <p>From modernizing event notification systems to mentoring engineers and driving design workshops, I combine deep technical expertise with strong leadership to deliver impactful solutions in the healthcare technology space.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">3.92</span>
-                        <span class="stat-label">GPA (MS)</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number"><i class="fas fa-heartbeat"></i></span>
-                        <span class="stat-label">Healthcare Tech</span>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="3.92" data-decimal="true">0</span>
+                            <span class="stat-label">GPA (Masters)</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Components Built</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="57">0</span><span class="stat-suffix">%</span>
+                            <span class="stat-label">Clinical Impact</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,10 +142,10 @@
         <div class="container">
             <h2 class="section-title reveal">Experience</h2>
             <div class="timeline">
-                <!-- Philips - Current -->
                 <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
+                    <div class="timeline-dot pulse"></div>
                     <div class="timeline-content">
+                        <div class="timeline-badge">Current</div>
                         <div class="timeline-header">
                             <h3>Software Development Engineer 2</h3>
                             <span class="timeline-date">Jan 2024 &ndash; Present</span>
@@ -127,7 +163,6 @@
                     </div>
                 </div>
 
-                <!-- Petrabytes -->
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -143,7 +178,6 @@
                     </div>
                 </div>
 
-                <!-- Philips India -->
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -200,7 +234,8 @@
         <div class="container">
             <h2 class="section-title reveal">Projects</h2>
             <div class="projects-grid">
-                <div class="project-card reveal">
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-card-glow"></div>
                     <div class="project-header">
                         <i class="fas fa-folder-open project-icon"></i>
                         <div class="project-links">
@@ -217,7 +252,8 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal">
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-card-glow"></div>
                     <div class="project-header">
                         <i class="fas fa-folder-open project-icon"></i>
                         <div class="project-links">
@@ -234,7 +270,8 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal">
+                <div class="project-card reveal" data-tilt>
+                    <div class="project-card-glow"></div>
                     <div class="project-header">
                         <i class="fas fa-folder-open project-icon"></i>
                         <div class="project-links">
@@ -369,7 +406,16 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Shubham Gaikwad. Built with passion and pure code.</p>
+            <div class="footer-content">
+                <div class="footer-logo">&lt;SG /&gt;</div>
+                <div class="footer-social">
+                    <a href="https://github.com/gaikwadshubham03" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/shubham-gaikwad-b8852015b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:shubhamsubhashgaikwad@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-text">Designed & Built by Shubham Gaikwad</p>
+                <p class="footer-copyright">&copy; 2025. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
