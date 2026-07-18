@@ -67,10 +67,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.loaded .fade-in-up {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 a {
     text-decoration: none;
@@ -203,13 +199,6 @@ img {
     font-weight: 600;
 }
 
-/* ========== Hero Fade-In Sequence ========== */
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transition-delay: var(--delay, 0s);
-}
 
 /* ========== Navigation ========== */
 .navbar {
@@ -1411,11 +1400,6 @@ img {
         transition: none;
     }
 
-    .fade-in-up {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
 
     .cursor {
         animation: none;

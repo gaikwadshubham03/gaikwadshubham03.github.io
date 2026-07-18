@@ -1,5 +1,3 @@
-// ========== Page Load ==========
-document.body.classList.add('loaded');
 
 // ========== Theme Toggle ==========
 const themeToggle = document.getElementById('theme-toggle');
@@ -160,7 +158,7 @@ function typeEffect() {
     setTimeout(typeEffect, typingSpeed);
 }
 
-setTimeout(typeEffect, 500);
+typeEffect();
 
 // ========== Back to Top Button ==========
 const backToTop = document.getElementById('back-to-top');
